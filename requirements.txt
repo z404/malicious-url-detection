@@ -4,3 +4,4 @@ xgboost
 fastapi
 uvicorn
 gunicorn
+sklearn
