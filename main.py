@@ -5,7 +5,7 @@ app = FastAPI()
 
 @app.get("/")
 def read_root():
-    return {"Hello": "World"}
+    return {"response": "Welcome to the URL predictor API. To view documentation, visit /docs"}
 
 @app.post("/retrain")
 def retrain():
@@ -17,5 +17,5 @@ def isrunning():
 
 @app.get("/predict")
 def predict(url: str):
-    predictor.predict(url)
-    return {"Hello": "World"}
+    return {"result": "benign"} if predictor.predict(url) == 0 else {"result": "malicious"}
+    
